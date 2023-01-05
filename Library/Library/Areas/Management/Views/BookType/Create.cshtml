@@ -1,0 +1,14 @@
+﻿@model Tbl_BookType
+
+<h3 class="text-center">Yeni Kitap Tipi Ekleme Sayfası</h3>
+<form method="post" asp-controller="BookType" asp-action="Create" asp-area="Management">
+    <div class="row">
+        <div class="col-md-3 mb-3">
+            <label class="form-label" asp-for="Name">Kitap Tipi</label>
+            <input type="text" class="form-control" asp-for="Name" pattern="[A-Za-z]*"/>
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>       
+    </div>
+    <button type="submit" class="btn btn-primary">Ekle</button>
+
+</form>

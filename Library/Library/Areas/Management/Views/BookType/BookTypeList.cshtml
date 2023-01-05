@@ -1,0 +1,28 @@
+﻿@model List<Tbl_BookType>
+<h3 class="text-center">Kitap Tipi Listeleme Sayfası</h3>
+<a class="btn btn-primary" style="float:right;" asp-controller="BookType" asp-action="Create" asp-area="Management">Yeni Ekle</a>
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Aksiyonlar</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <th>@(i+1)</th>
+                <td>@Model[i].Name</td>
+                <td>
+                    <a asp-controller="BookType" asp-action="Edit" asp-area="Management" asp-route-id="@Model[i].ID"><i class="bi bi-pencil-square"></i></a>
+                    <a class="margin-icon" asp-controller="BookType" asp-area="Management" asp-action="HardDelete" asp-route-id="@Model[i].ID"><i class="bi bi-x-circle"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
